@@ -3,3 +3,6 @@ format:
 
 build: format
 	go build .
+
+run:
+	go run.
