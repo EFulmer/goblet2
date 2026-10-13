@@ -24,11 +24,4 @@ start_db_docker_local:
 		postgres:18.6
 
 restart_db_docker_local:
-	docker restart \
-		-p 5432 \
-		-e POSTGRES_USER=amin \
-		-e POSTGRES_PASSWORD=swordfish \
-		-e POSTGRES_DB=goblet \
-		--name=goblet2-db \
-		-it \
-		postgres:18.6
+	docker restart goblet2-db

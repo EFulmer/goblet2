@@ -38,6 +38,18 @@ func CreateSchema() {
 		log.Fatalf("Unable to connect to database: %v\n", err)
 	}
 	defer conn.Close(context.Background())
+
+	_, err = conn.Exec(context.Background(), `
+	create table users (
+		id serial,
+		name varchar(100) not null
+	);
+	insert into users (name) values ('eric');
+	`)
+
+	if err != nil {
+		log.Fatalf("Unable to create schema: %v\n", err)
+	}
 }
 
 func main() {
